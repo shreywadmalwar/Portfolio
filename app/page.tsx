@@ -14,6 +14,7 @@ export default function Home() {
       </div>
       <Button />
       <div className="flex flex-col items-end py-4">
+
         <div className="pr-8">
           <div className="vertical-line"> </div>
         </div>
