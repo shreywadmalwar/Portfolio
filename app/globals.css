@@ -2,32 +2,199 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+    background-color: #343539;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.arbutus-slab-regular {
+    font-family: "Arbutus Slab", serif;
+    font-weight: 600;
+    font-style: normal;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.mukta-extralight {
+    font-family: "Mukta", sans-serif;
+    font-weight: 200;
+    font-style: normal;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.mukta-light {
+    font-family: "Mukta", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.mukta-regular {
+    font-family: "Mukta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.mukta-medium {
+    font-family: "Mukta", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.mukta-semibold {
+    font-family: "Mukta", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.mukta-bold {
+    font-family: "Mukta", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.mukta-extrabold {
+    font-family: "Mukta", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.button-inside {
+    background-color: #1e1f21;
+}
+
+.name-shreyash {
+    color: #F4CA78;
+}
+
+.button-contact {
+    border-color: #F4CA78;
+    color: #F4CA78;
+}
+
+.horizontal_line_about {
+    height: 4px;
+    width: 250px;
+    background-color: #F4CA78;
+}
+
+.horizontal_line {
+    height: 4px;
+    width: 160px;
+    background-color: #F4CA78;
+}
+
+.vertical-line {
+    height: 160px;
+    width: 3px;
+    background-color: #F4CA78;
+}
+
+
+*/ .custom-button {
+    width: 140px;
+    height: 56px;
+    overflow: hidden;
+    border: none;
+    color: #fff;
+    background: none;
+    position: relative;
+    padding-bottom: 2em;
+    cursor: pointer;
+}
+
+.custom-button>div,
+.custom-button>svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.custom-button:before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    background: currentColor;
+    transition: transform 0.25s ease-out;
+}
+
+.custom-button:hover:before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.custom-button .clone>*,
+.custom-button .text>* {
+    opacity: 1;
+    font-size: 1.3rem;
+    transition: 0.2s;
+    margin-left: 4px;
+}
+
+.custom-button .clone>* {
+    transform: translateY(60px);
+}
+
+.custom-button:hover .clone>* {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+.custom-button:hover .text>* {
+    opacity: 1;
+    transform: translateY(-60px);
+    transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+.custom-button:hover .clone> :nth-child(1) {
+    transition-delay: 0.15s;
+}
+
+.custom-button:hover .clone> :nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.custom-button:hover .clone> :nth-child(3) {
+    transition-delay: 0.25s;
+}
+
+.custom-button:hover .clone> :nth-child(4) {
+    transition-delay: 0.3s;
+}
+
+/* icon style and hover */
+.custom-button svg {
+    width: 20px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(-50deg);
+    transition: 0.2s ease-out;
+}
+
+.custom-button:hover svg {
+    transform: translateY(-50%) rotate(-90deg);
+}
+
+
+
+/* -----
+SVG Icons - svgicons.sparkk.fr
+----- */
+
+.svg-icon {
+    width: 3em;
+    height: 3em;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+    fill: #ffffff;
+}
+
+.svg-icon circle {
+    stroke: #f5f5f5;
+    stroke-width: 1;
 }
