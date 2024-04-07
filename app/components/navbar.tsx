@@ -1,7 +1,15 @@
 "use client";
 import Link from 'next/link';
+import { useState } from 'react';
+
 
 const Navbar: React.FC = () => {
+    const [resumeClicked, setResumeClicked] = useState(false);
+
+    const handleResumeClick = () => {
+        setResumeClicked(true);
+    }
+
     const handleContactClick = () => {
         const targetElement = document.getElementById('scrollTarget');
         if (targetElement) {
@@ -14,14 +22,26 @@ const Navbar: React.FC = () => {
             targetElement.scrollIntoView({ behavior: 'smooth' });
         }
     };
+    const handleProjectClick = () => {
+        const targetElement = document.getElementById('scrollTargetProject');
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+    const handleLogoClick = () => {
+        if (window.location.href === 'http://localhost:3000/') {
+            setResumeClicked(false);
+        }
+    }
 
     return (
-        <nav className="arbutus-slab-regular flex justify-between items-center p-5">
+        <nav className={`arbutus-slab-regular flex justify-between items-center p-5 ${resumeClicked ? 'py-0' : ''}`}>
             <div className="logo">
                 <Link href='/'>
                     <svg xmlns="http://www.w3.org/2000/svg"
                         xmlnsXlink="http://www.w3.org/1999/xlink"
                         version="1.1"
+                        onClick={handleLogoClick}
                         id="Layer_1"
                         x="0px" y="0px" width="50%"
                         viewBox="0 0 480 352"
@@ -32,20 +52,21 @@ const Navbar: React.FC = () => {
                     </svg>
                 </Link>
             </div>
-
-            <div className="links_center text-white text-2xl">
-                <button onClick={handleAboutClick} className="mx-3">
+            <div className={`links_center text-white text-3xl ${resumeClicked ? 'hidden' : ''}`}>
+                <button onClick={handleAboutClick} className="mx-4">
                     About
                 </button>
-                <button className="mx-3">
+                <button className="mx-4" onClick={handleProjectClick}>
                     Projects
                 </button>
-                <button onClick={handleContactClick} className="mx-3">
+                <button onClick={handleContactClick} className="mx-4">
                     Contact
                 </button>
             </div>
             <div>
-
+                <Link onClick={handleResumeClick} href="/resume" className='links_center text-white p-3 text-3xl'>
+                    Resume
+                </Link>
             </div>
         </nav>
     );

@@ -9,7 +9,7 @@ const Button: React.FC = () => {
 
     return (
         <div className="mt-10">
-            <button onClick={handleContactClick} className="button-contact font-bold px-6 py-3 text-2xl border border-solid border-4 rounded-md">Contact Me</button>
+            <button onClick={handleContactClick} className="button-contact font-bold px-6 py-3 text-2xl border border-solid rounded-md">Contact Me</button>
         </div>
     )
 }
