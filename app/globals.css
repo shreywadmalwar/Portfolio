@@ -86,7 +86,7 @@
 }
 
 
-*/ .custom-button {
+.custom-button {
     width: 140px;
     height: 56px;
     overflow: hidden;
@@ -164,7 +164,6 @@
     transition-delay: 0.3s;
 }
 
-/* icon style and hover */
 .custom-button svg {
     width: 20px;
     right: 0;
@@ -176,12 +175,6 @@
 .custom-button:hover svg {
     transform: translateY(-50%) rotate(-90deg);
 }
-
-
-
-/* -----
-SVG Icons - svgicons.sparkk.fr
------ */
 
 .svg-icon {
     width: 3em;
