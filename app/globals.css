@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-    background-color: #343539;
-}
 
 .arbutus-slab-regular {
     font-family: "Arbutus Slab", serif;

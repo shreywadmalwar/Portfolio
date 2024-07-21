@@ -22,8 +22,20 @@ const Navbar: React.FC = () => {
             targetElement.scrollIntoView({ behavior: 'smooth' });
         }
     };
+    const handleSkillsClick = () => {
+        const targetElement = document.getElementById('scrollTargetMySkills');
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
     const handleProjectClick = () => {
         const targetElement = document.getElementById('scrollTargetProject');
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+    const handleExperienceClick = () => {
+        const targetElement = document.getElementById('scrollTargetExperience');
         if (targetElement) {
             targetElement.scrollIntoView({ behavior: 'smooth' });
         }
@@ -55,6 +67,12 @@ const Navbar: React.FC = () => {
             <div className={`links_center text-white text-3xl ${resumeClicked ? 'hidden' : ''}`}>
                 <button onClick={handleAboutClick} className="mx-4">
                     About
+                </button>
+                <button onClick={handleSkillsClick} className="mx-4">
+                    Skills
+                </button>
+                <button onClick={handleExperienceClick} className="mx-4">
+                    Experience
                 </button>
                 <button className="mx-4" onClick={handleProjectClick}>
                     Projects

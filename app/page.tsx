@@ -1,5 +1,7 @@
 import About from "./components/about";
 import Button from "./components/button";
+import Experience from "./components/experience";
+import MySkills from "./components/mySkills";
 import Projects from "./components/projects";
 import Social_Media_Icons from "./components/social_media_icons";
 
@@ -17,6 +19,8 @@ export default function Home() {
       <div className="py-4">
         <Social_Media_Icons />
         <About />
+        <MySkills />
+        <Experience />
         <Projects />
       </div>
     </div>
